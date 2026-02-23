@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salim Digital - Services Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Salim Digital Logo" style="width: 40px; height: auto; margin-right: 0.5rem;"> Salim Digital
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" onclick="showPage('home'); closeMenu(); return false;">Accueil</a></li>
+                <li><a href="#produits" class="nav-link" onclick="scrollToSection('produits'); closeMenu(); return false;">Produits</a></li>
+                <li><a href="#testimonials" class="nav-link" onclick="scrollToSection('testimonials'); closeMenu(); return false;">Avis</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('order'); closeMenu(); return false;">Commander</a></li>
+                <script>
+                function scrollToSection(sectionId) {
+                    const section = document.getElementById(sectionId) || document.querySelector('section#' + sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+                </script>
+                <li class="mobile-theme-item">
+                    <button class="mobile-theme-toggle" id="mobileThemeBtn" title="Changer le thème">
+                        <i class="fas fa-moon"></i> Thème
+                    </button>
+                </li>
+            </ul>
+            <button class="theme-toggle" id="themeBtn" title="Changer le thème">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Accès Premium aux Services<br> Numériques</span>
+                    <br> Les Meilleurs à Prix Imbattable
+                </h1>
+                <p class="hero-subtitle">Netflix • Spotify • ChatGPT • CapCut Pro - Tous vos services premium en un seul endroit!</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showPage('order')">
+                        <i class="fas fa-shopping-cart"></i> Commencer Maintenant
+                    </button>
+                    <button class="btn btn-secondary">En Savoir Plus</button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>100K+</h3>
+                        <p>Clients satisfaits</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5 Services</h3>
+                        <p>Premium combinés</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support actif</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="produits" class="products">
+            <div class="container">
+                <h2 class="section-title">Nos Services Premium</h2>
+                <p class="section-subtitle">Sélectionnez vos services préférés</p>
+
+                <div class="products-grid">
+                    <!-- Netflix -->
+                    <div class="product-item">
+                        <div class="product-image netflix-bg">
+                            <img src="images/netflix.png" alt="Netflix Premium" style="width: 45%; height: 45%; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(229, 9, 20, 0.5));">
+                        </div>
+                        <h3 class="product-name">Netflix Premium</h3>
+                        <p class="product-desc">Films et séries en Ultra HD, sans publicité</p>
+                        <div class="product-footer">
+                            <span class="product-price">$6.99/mois</span>
+                            <button class="btn-buy" onclick="showPage('order', 'netflix')">Acheter</button>
+                        </div>
+                    </div>
+
+                    <!-- Spotify -->
+                    <div class="product-item">
+                        <div class="product-image spotify-bg">
+                            <!-- Place for Spotify image: spotify.png or spotify.jpg -->
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <h3 class="product-name">Spotify Premium</h3>
+                        <p class="product-desc">90 millions de chansons sans pub</p>
+                        <div class="product-footer">
+                            <span class="product-price">$10.99/mois</span>
+                            <button class="btn-buy" onclick="showPage('order', 'spotify')">Acheter</button>
+                        </div>
+                    </div>
+
+                    <!-- ChatGPT Pro -->
+                    <div class="product-item">
+                        <div class="product-image chatgpt-bg">
+                            <img src="images/chat-gpt.png" alt="ChatGPT Pro" style="width: 45%; height: 45%; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(16, 163, 127, 0.5));">
+                        </div>
+                        <h3 class="product-name">ChatGPT Pro</h3>
+                        <p class="product-desc">L'IA la plus avancée (GPT-4 Turbo)</p>
+                        <div class="product-footer">
+                            <span class="product-price">$20/mois</span>
+                            <button class="btn-buy" onclick="showPage('order', 'chatgpt')">Acheter</button>
+                        </div>
+                    </div>
+
+                    <!-- CapCut Pro -->
+                    <div class="product-item">
+                        <div class="product-image capcut-bg">
+                            <img src="images/capcut-icon.png" alt="CapCut Pro" style="width: 45%; height: 45%; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 217, 255, 0.5));">
+                        </div>
+                        <h3 class="product-name">CapCut Pro</h3>
+                        <p class="product-desc">Édition vidéo pro sans filigrane</p>
+                        <div class="product-footer">
+                            <span class="product-price">$4.99/mois</span>
+                            <button class="btn-buy" onclick="showPage('order', 'capcut')">Acheter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">Avis de nos Clients</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Les meilleur prix trouvés! J'économise plus de 50% par rapport aux abonnements individuels."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/80?img=1" alt="Avatar">
+                            <div>
+                                <strong>Ahmed Salim</strong>
+                                <small>Cliente depuis 1 an</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Service fiable et réactif. J'ai tous mes services préférés en un endroit!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/80?img=2" alt="Avatar">
+                            <div>
+                                <strong>Marie Durand</strong>
+                                <small>Créateur de contenu</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Accès instantané et sans complications. Le meilleur rapport qualité-prix du marché!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/80?img=3" alt="Avatar">
+                            <div>
+                                <strong>Jean Moise</strong>
+                                <small>Développeur</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta">
+            <div class="container">
+                <h2>Pourquoi choisir Salim Digital?</h2>
+                <p>Les meilleurs prix, une fiabilité garantie, et un support client exceptionnel</p>
+                <button class="btn btn-primary btn-large" onclick="showPage('order')">
+                    <i class="fas fa-rocket"></i> Démarrer Maintenant
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ORDER PAGE -->
+    <div id="order" class="page">
+        <div class="order-container">
+            <div class="order-header-bar">
+                <button class="btn-back" onclick="showPage('home')">
+                    <i class="fas fa-arrow-left"></i> Retour
+                </button>
+            </div>
+
+            <div class="order-header">
+                <h1>Passez votre commande</h1>
+                <p>Complétez le formulaire et accédez instantanément à vos services</p>
+            </div>
+
+            <div class="order-content">
+                <form id="orderForm" class="order-form">
+                    <div class="form-section">
+                        <h2>Vos Informations</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label for="fullName">Nom complet *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Nom et prénom">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Entrez votre téléphone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product">Produit *</label>
+                            <select id="product" name="product" required>
+                                <option value="">Sélectionnez un produit</option>
+                                <option value="netflix">Netflix Premium</option>
+                                <option value="spotify">Spotify Premium</option>
+                                <option value="chatgpt">ChatGPT Pro</option>
+                                <option value="capcut">CapCut Pro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Quantité</h2>
+                        
+                        <div class="form-group">
+                            <label for="quantity">Nombre de comptes *</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-check"></i> Valider la Commande
+                    </button>
+
+                    <p class="form-footer">Paiement sécurisé • Accès instantané • Garantie 30j</p>
+                </form>
+
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Commande Confirmée!</h2>
+                    <p>Merci pour votre achat. Un email de confirmation a été envoyé.</p>
+                    <p>Vous recevrez vos identifiants d'accès dans les 5 minutes.</p>
+                    <button class="btn btn-primary" onclick="showPage('home')">Retour à l'accueil</button>
+                </div>
+            </div>
+
+            <div class="order-sidebar">
+                <div class="order-info">
+                    <h3><i class="fas fa-lock"></i> Paiement Sécurisé</h3>
+                    <p>Chiffrement SSL 256-bit • Données protégées</p>
+                </div>
+                <div class="order-info">
+                    <h3><i class="fas fa-redo"></i> Garantie 30 jours</h3>
+                    <p>Remboursement complet si non satisfait</p>
+                </div>
+                <div class="order-info">
+                    <h3><i class="fas fa-headphones"></i> Assistance 24/7</h3>
+                    <p>Support en français • Réponse rapide</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Salim Digital</h4>
+                    <p>Vos services premium au meilleur prix</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#testimonials">Avis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Salim Digital. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/212XXXXXXXXX" target="_blank" class="whatsapp-button" title="Support WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-label">Taper un message au support WhatsApp</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
